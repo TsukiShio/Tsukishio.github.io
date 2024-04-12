@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后日谈</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body {
+            background-color: rgba(206, 182, 182, 0.637);
+            /* background-color:#111827; */
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            /* background-image: url('your_image_url'); */
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+        }
+
+        .p {
+            width: 800px;
+            height: 400px;
+            transition: .4s;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .g {
+            width: 600px;
+            height: 400px;
+            transition: .4s;
+            transition: .5s;
+            background-size: cover;
+            /* background-color: rgba(206, 182, 182, 0.637); */
+            /* display: flex; */
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            align-items: flex-start;
+        }
+        .gg {
+            width: 600px;
+            height: 400px;
+            transition: .4s;
+            background-size: cover;
+            /* background-color: rgba(206, 182, 182, 0.637); */
+            /* display: flex; */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* align-items: flex-start; */
+        }
+
+        .k {
+            position: relative;
+            width: 130px;
+            height: 9%;
+            background-color: rgba(206, 182, 182, 0.637);
+            transition: .5s;
+            /* transition: opacity 0.5s; */
+            overflow: hidden;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+            /* overflow-y: auto; */
+            margin-bottom: 12.5px; /* 添加这一行 */
+        }
+
+        .lf {
+            position: relative;
+            left: 10px;
+        }
+
+        .lt {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 50%;
+            /* display: flex; */
+            /* 纵向布局 */
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        .k:hover {
+            background-color: rgb(57, 144, 144);
+            color: rgb(19, 48, 38);
+        }
+
+        .content {
+            display: none;
+            /* opacity: 0; */
+            transition: opacity 0.5s;
+        }
+
+        .content.active {
+            opacity: 1; /* 添加这一行 */
+        }
+
+        .lt::-webkit-scrollbar {
+            display: none;
+        }
+
+        .p-spacing {
+        margin-bottom: 12.5px; /* 调整间距大小 */
+    }
+
+
+    @keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
+
+    .fade-in-out {
+    animation: fadeInOut 1s linear;
+    /* animation-delay: 2s; */
+    }
+/* ------------------------------------ */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="lt">
+        <div class="k"><span class="lf">「岁岁年年」</span></div>
+        <div class="k"><span class="lf">「许个愿吧」</span></div>
+        <div class="k"><span class="lf">「朝朝暮暮」</span></div>
+        <div class="k"><span class="lf">「&emsp;&emsp;&emsp;&emsp;」</span></div>
+    </div>
+    <div class="p">
+        <div id="0" class="gg content fade-in-out"><p style="font-size: 25px;" class="p-spacing lf">伊酱啊、又长大一岁了、祝贺你、在人间度过又一年</p></div>
+        <div id="1" class="content g fade-in-out">
+            <p style="font-size: 25px;" class="p-spacing lf">许个愿吧、我先来</p>
+            <p style="font-size: 25px;" class="p-spacing lf">愿你平平安安、健健康康、开开心心，、快快乐乐</p>
+            <p style="font-size: 25px;" class="p-spacing lf">愿你心想事成、美梦成真、念念不忘、得偿所愿</p>
+            <p style="font-size: 25px;" class="p-spacing lf">愿你夜里有灯、雨中有伞、一路尽欢、一生被爱</p>
+            <p style="font-size: 25px;" class="p-spacing lf">愿你从此旅途坦荡、愿此生兴致盎然、烟火灿烂</p>
+            <p style="font-size: 25px;" class="p-spacing lf">愿此间静好、岁月长安</p>
+        </div>
+        <div id="2" class="content gg fade-in-out">
+            <p style="font-size: 25px;" class="p-spacing lf">致我们一起度过的所有时间</p>
+            <p style="font-size: 25px;" class="p-spacing lf fade-in">以及我们没能一起度过的每一天</p>
+        </div>
+        <div id="3" class="content gg fade-in-out"><p style="font-size: 50px;" class="p-spacing lf">欢迎来到人间</p></div>
+    </div>
+    <script>
+        let p = document.querySelector(".p")
+        let k = document.getElementsByClassName("k")
+
+        function reset() {
+            for (let i = 0; i < k.length; i++) {
+                k[i].className = "k"
+            }
+        }
+
+        for (let i = 0; i < k.length; i++) {
+            k[i].addEventListener("click", function () {
+                // p.style.backgroundImage = "url('" + [i + 1] + ".jpg')"
+                update(i);
+                reset();
+                this.className += " active";
+            })
+        }
+
+        function update(i) {
+            k[i].style.backgroundColor = "rgb(57, 144, 144)"; 
+            for (let j = 0; j < k.length; j++) {
+                if (j !== i) {
+                k[j].style.backgroundColor = ""; // 将背景颜色设置为空字符串，即清除背景颜色
+                }
+            }
+            for (let j = 0; j < k.length; j++) {
+                let element = document.getElementById(j.toString());
+                if (j === i) {
+                    element.style.display = 'flex';
+                } else {
+                    element.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
